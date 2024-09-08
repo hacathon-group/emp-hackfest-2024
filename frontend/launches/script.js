@@ -35,10 +35,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 const modalDetails = document.getElementById('modal-details');
                 const countdownTimer = document.getElementById('countdown-timer');
                 const flightPath = document.getElementById('flight-path');
+                const mapsLink = document.getElementById('maps-link');
+                const crewList = document.getElementById('crew-list');
 
                 modalTitle.textContent = launch.name;
                 modalDetails.textContent = `Date: ${new Date(launch.net).toLocaleDateString()} | Site: ${launch.pad.location.name}`;
-                
+
+                // Google Maps Link for Launch Location
+                const latitude = launch.pad.location.latitude;
+                const longitude = launch.pad.location.longitude;
+                mapsLink.href = `https://www.google.com/maps?q=${launch.pad.location.name}`;
+                mapsLink.textContent = `View Launch Location: ${launch.pad.location.name}`;
+
+                // Check if the launch is crewed and list crew members
+                if (launch.crew.length > 0) {
+                    crewList.innerHTML = ''; // Clear previous crew list
+                    launch.crew.forEach(member => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = `${member.name} (${member.role})`;
+                        crewList.appendChild(listItem);
+                    });
+                } else {
+                    crewList.innerHTML = '<li>No crew for this launch.</li>';
+                }
+
                 // Countdown Timer
                 const launchDate = new Date(launch.net).getTime();
                 const interval = setInterval(() => {
@@ -58,6 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }, 1000);
 
+                // Placeholder for flight path animation
+                flightPath.innerHTML = `<p>Flight path animation here (placeholder for ${launch.name})</p>`;
+
                 modal.style.display = 'block';
             }
 
@@ -70,11 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (event.target === document.getElementById('modal')) {
                     document.getElementById('modal').style.display = 'none';
                 }
-            });
-
-            // Back to Home Button
-            document.getElementById('back-home').addEventListener('click', () => {
-                window.location.href = 'index.html'; // Adjust if your home page URL is different
             });
         })
         .catch(error => {
