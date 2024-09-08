@@ -1,6 +1,6 @@
-# SpaceHack
+# Lauch Past!
 
-Welcome to **SpaceHack** – an exciting web application designed to ignite your passion for space exploration and astronomy! Our platform offers a range of features to engage users with rocket launches, space events, and the best star-gazing spots.
+Welcome to **Lauch Past!** – an exciting web application designed to ignite your passion for space exploration and astronomy! Our platform offers a range of features to engage users with rocket launches, space events, and the best star-gazing spots.
 
 ## 🚀 Key Features
 
@@ -55,7 +55,7 @@ Welcome to **SpaceHack** – an exciting web application designed to ignite your
 
 ## 🤝 Contributing
 
-We welcome contributions to enhance the SpaceHack project! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
+We welcome contributions to enhance the Lauch Past! project! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
 
 ## 📜 License
 
