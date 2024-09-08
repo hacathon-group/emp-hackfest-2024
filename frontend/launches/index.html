@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Rocket Launches</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header>
+        <h1>Upcoming Rocket Launches</h1>
+    </header>
+
+    <main>
+        <section class="launches-container" id="launches-container">
+            <!-- Launch cards will be inserted here dynamically -->
+        </section>
+
+        <!-- Modal for expanded launch details -->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <a href="/" class="btn back-home">Back to Home</a>
+                <span class="close" id="close">&times;</span>
+                <h2 id="modal-title">Launch Title</h2>
+                <p id="modal-details">Details about the launch.</p>
+                <div id="countdown">Countdown: <span id="countdown-timer"></span></div>
+                <div id="flight-path">
+                    <!-- Placeholder for flight path animation -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Created for SpaceHack 2024</p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>

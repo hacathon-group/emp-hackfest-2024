@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Solar Eclipse",
+        "date": "2025-08-12",
+        "description": "Total solar eclipse visible in Redmond, WA.",
+        "type": "Eclipse"
+    },
+    {
+        "name": "Lunar Eclipse",
+        "date": "2025-05-15",
+        "description": "Total lunar eclipse visible in Redmond, WA.",
+        "type": "Eclipse"
+    },
+    {
+        "name": "Blue Moon",
+        "date": "2025-08-30",
+        "description": "The second full moon in a single calendar month.",
+        "type": "Celestial Event"
+    }
+]

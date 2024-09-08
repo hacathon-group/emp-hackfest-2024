@@ -1,0 +1,135 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-bottom: 2px solid #ff6600;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+/* Scroller Container */
+.events-scroller-container {
+    width: 100%;
+    max-width: 1000px;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    scroll-behavior: smooth;  /* Smooth scrolling for a better user experience */
+    padding-bottom: 1rem;
+}
+
+.event-cards {
+    display: flex;
+    gap: 1rem;
+    padding-left: 1rem;  /* Add some space for smooth scrolling */
+    transition: transform 0.5s ease; /* Smooth animation for scrolling */
+}
+
+.event-card {
+    background-color: #1f1f1f;
+    padding: 1.5rem;
+    border-radius: 10px;
+    min-width: 250px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    flex: 0 0 auto;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.event-card:hover {
+    transform: scale(1.05);
+    background-color: #282828;
+}
+
+.event-card h2 {
+    font-size: 1.5rem;
+    color: #ffcc00;
+    margin-bottom: 1rem;
+}
+
+.event-card p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+/* Hidden description for the collapsed card */
+.event-description.hidden {
+    display: none;
+}
+
+/* Expanded state for the card */
+.event-card.expanded {
+    background-color: #2a2a2a;
+    padding: 2rem;
+    min-width: 300px;
+    max-width: 400px;
+    transform: scale(1.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Button */
+.btn {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff6600;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ff3300;
+}
+
+footer {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 2px solid #ff6600;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .events-scroller-container {
+        padding: 1rem;
+    }
+
+    .event-card {
+        min-width: 200px;
+        padding: 1rem;
+    }
+}
