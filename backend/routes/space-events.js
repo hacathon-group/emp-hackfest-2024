@@ -4,6 +4,7 @@ const path = require('path');
 module.exports = async function (fastify, opts) {
     fastify.get('/space-events', async (req, res) => {
         try {
+            console.log(`Fetching space events...`);
             const filePath = path.join(__dirname, '../data/events.json');  // Your JSON file path
             const data = fs.readFileSync(filePath, 'utf-8');
             const events = JSON.parse(data);
@@ -12,6 +13,7 @@ module.exports = async function (fastify, opts) {
             const now = new Date();
             const upcomingEvents = events.filter(event => new Date(event.date) > now);  // Filter future events
 
+            console.log('Upcoming space events:', upcomingEvents);
             if (upcomingEvents.length > 0) {
                 res.send(upcomingEvents);  // Send all upcoming events
             } else {

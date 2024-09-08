@@ -9,6 +9,7 @@ module.exports = async function (fastify, opts) {
         const userLat = parseFloat(lat);
         const userLng = parseFloat(lng);
 
+        console.log(`User location: ${userLat}, ${userLng}`);
         // Sample data; replace with actual API data
         const starGazingSpots = [
             { "name": "Rattlesnake Ledge", "latitude": 47.4349, "longitude": -121.7857, "location": "Cedar Falls, WA"},
@@ -63,6 +64,7 @@ module.exports = async function (fastify, opts) {
 
         // Send all spots, sorted by distance
         const sortedSpots = spotsWithDistance.sort((a, b) => a.distance - b.distance);
+        console.log(`Found ${sortedSpots.length} star-gazing spots near user.`);
 
         res.send({ spots: sortedSpots });
     });
